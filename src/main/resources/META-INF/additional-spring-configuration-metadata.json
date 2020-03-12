@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "cardealership.database.recreate",
+      "type": "java.lang.String",
+      "description": "Description for cardealership.database.recreate."
+  }
+] }

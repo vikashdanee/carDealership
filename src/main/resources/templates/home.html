@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="../css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h1>Itrellis Car Dealership</h1></div>
+            <div class="panel-body">
+
+                <section class="col-xs-12 box filter">
+                    <p class="well well-sm text-center">Customize the list</p>
+                    <div class="filter-block">
+                        <form class="form-horizontal" action="">
+                            <div class="col-sm-3 form-group tags categories">
+                                <h1>By Make</h1>
+                                <div class="checkbox"><label><input type="checkbox" rel="category-one"/> Chevy</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="category-two"/> Ford</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="category-two"/> Honda</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="category-three"/> Mercedes</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="category-four"/> Toyota</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="category-five"/> Tesla</label></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-3 form-group tags topics">
+                                <h1>By Color</h1>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-one"/>Black</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-two"/>Blue</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-three"/>Gray</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-four"/>Red</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-five"/>White</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-five"/>Silver</label></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-3 form-group tags topics">
+                                <h1>By Price</h1>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-one"/>< 5000</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-two"/>< 10000 & > 5000</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-three"/>< 15000 & > 25000</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-four"/>< 50000 & > 25000</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-five"/>< 100000 & > 50000</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-five"/>> 100000</label></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-3 form-group tags topics">
+                                <h1>By Features</h1>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-one"/>Sun Roof</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-two"/>Four Wheel Drive</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-three"/>Low Miles</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-four"/>Navigation</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-five"/>Power Windows</label></div>
+                                <div class="checkbox"><label><input type="checkbox" rel="topic-five"/>Heated Seat</label></div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <h1 class="text-center">Car list</h1>
+                            <div class="row">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Make</th>
+                                        <th scope="col">Year</th>
+                                        <th scope="col">Color</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Moon Roof</th>
+                                        <th scope="col">Four Wheel Drive</th>
+                                        <th scope="col">Low Miles</th>
+                                        <th scope="col">Navigation</th>
+                                        <th scope="col">Power Windows</th>
+                                        <th scope="col">Heated Seat
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <tr th:each="car,iterStat : ${cars}">
+                                        <th scope="row" th:text="${iterStat.index+1}">
+                                        </th>
+                                        <td th:text="${car.make}">
+                                        </td>
+                                        <td th:text="${car.year}">
+                                        </td>
+                                        <td th:text="${car.color}">
+                                        </td>
+                                        <td th:text="${car.price}">
+                                        </td>
+                                        <td th:text="${car.hasSunroof}">
+                                        </td>
+                                        <td th:text="${car.fourWheelDrive}">
+                                        </td>
+                                        <td th:text="${car.hasLowMiles}">
+                                        </td>
+                                         <td th:text="${car.hasPowerWindows}">
+                                         </td>
+                                        <td th:text="${car.hasNavigation}">
+                                        </td>
+                                        <td th:text="${car.hasHeatedSeats}">
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+    </div>
+</div>
+</body>
+</html>
