@@ -16,7 +16,7 @@ import java.util.List;
  * @author Vikash Danee on 3/10/20
  */
 @RestController
-@RequestMapping("/home")
+@RequestMapping("/api/cars")
 public class HomeController {
 
     @Autowired

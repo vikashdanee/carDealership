@@ -26,7 +26,7 @@ public class HomeControllerTest extends CardealershipApplicationTests {
 
     @Test
     public void carListTest() throws Exception{
-        mockMvc.perform(get("/home")).andExpect(status().isOk())
+        mockMvc.perform(get("/api/cars")).andExpect(status().isOk())
                 .andExpect(content().contentType("application/json"))
                 .andExpect(jsonPath("$[0].make").value("Chevy"))
                 .andExpect(jsonPath("$[0].year").value("2016"));

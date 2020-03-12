@@ -33,6 +33,6 @@ public class CarController {
         carService.save(car);
         List<Car> cars = carService.getCars();
         map.put("cars", cars);
-        return "redirect:/home";
+        return "redirect:/api/cars";
     }
 }
